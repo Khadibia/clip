@@ -1,4 +1,3 @@
-# clip_service.py
 import os
 import cv2
 from pathlib import Path
@@ -65,5 +64,6 @@ async def analyse_clip(video: UploadFile = File(...)):
         f.unlink()
     frame_dir.rmdir()
     temp_video.unlink()
+
 
     return JSONResponse(content={'visual_analysis': avg_scores})
